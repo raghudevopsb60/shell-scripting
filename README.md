@@ -5,6 +5,7 @@
 Type of shell scripting 
 -----
 SH, BASH, KSH, CSH, ZSH
+
 Our Choice - BASH 
 
 Reasons why bash 
