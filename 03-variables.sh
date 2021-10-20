@@ -24,3 +24,7 @@ echo ${x}X${y} = 200
 #DATE=2021-10-20
 DATE=$(date +%F)
 echo Good Morning, Welcome, Today date is $DATE
+
+# Arth substitution
+ADD=$((2+3+4+5+6*7/2-5))
+echo added = $ADD
