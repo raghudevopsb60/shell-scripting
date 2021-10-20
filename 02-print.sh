@@ -9,7 +9,7 @@
 echo Hello World
 echo Welcome
 
-# ESC Sequences , \n (new line), \t (tab space) , \e (new tab)
+# ESC Sequences , \n (new line), \t (tab space) , \e (new color)
 
 #Syntax: echo -e "Message\nNew Line"
 # To enable any esc seq we need to enable -e option
@@ -18,3 +18,21 @@ echo Welcome
 echo -e "Hello World\nWelcome"
 
 echo -e "word1\t\tword2"
+
+# Colored Output
+# syntax: echo -e "\e[COLmMessage"
+
+## Colors     CODE
+# Red         31
+# Green       32
+# Yellow      33
+# Blue        34
+# Magenta     35
+# Cyan        36
+
+echo -e "\e[31mText in Red Color"
+echo -e "\e[32mText in Green Color"
+echo -e "\e[33mText in Yellow Color"
+echo -e "\e[34mText in Blue Color"
+echo -e "\e[35mText in Magenta Color"
+echo -e "\e[36mText in Cyan Color"
