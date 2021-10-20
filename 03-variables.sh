@@ -19,4 +19,4 @@ echo Value of a = ${a}
 
 x=10
 y=20
-echo $xX$y = 200 
+echo ${x}X${y} = 200
