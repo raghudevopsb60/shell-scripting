@@ -31,6 +31,8 @@ $ bash script.sh
 $ sh script.sh
 ```
 
+Only in RedHat family BASH and SH are same, If you are around another OS like Ubuntu then BASH and SH differs.
+
 ```
 
 1. She-Bang & Comments 
