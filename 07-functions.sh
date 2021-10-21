@@ -9,7 +9,7 @@ function abc() {
   a=100
   echo a in function = $a
   b=20
-  return
+  return 20
   echo First Argument in Function = $1
 }
 
