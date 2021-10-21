@@ -9,6 +9,7 @@ function abc() {
   a=100
   echo a in function = $a
   b=20
+  echo First Argument in Function = $1
 }
 
 xyz() {
@@ -21,3 +22,4 @@ abc
 echo b in main program = $b
 xyz
 
+echo Frist Argument in Main Program = $1
