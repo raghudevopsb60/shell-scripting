@@ -6,6 +6,7 @@
 
 function abc() {
   echo I am a function abc
+  a=100
   echo a in function = $a
   b=20
 }
