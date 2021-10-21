@@ -1,4 +1,4 @@
 #!/bin/bash
 
-exit 10
+exit
 ls
