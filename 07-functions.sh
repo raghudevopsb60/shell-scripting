@@ -8,5 +8,11 @@ function abc() {
   echo I am a function abc
 }
 
+xyz() {
+  echo I am a function xyz
+}
+
 ##  Main Program
 abc
+xyz
+
