@@ -9,6 +9,7 @@ function abc() {
   a=100
   echo a in function = $a
   b=20
+  return
   echo First Argument in Function = $1
 }
 
@@ -20,6 +21,7 @@ xyz() {
 a=10
 #abc Rahul
 abc $1
+echo Exit status of abc - $?
 echo b in main program = $b
 xyz
 
