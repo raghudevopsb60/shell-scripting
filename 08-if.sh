@@ -7,3 +7,9 @@ if [ "$username" == "root" ]; then
 else
   echo Hey, You are nonroot user
 fi
+
+if [ $UID -eq 0 ]; then
+  echo You are root user
+else
+  You are nonroot user
+fi
