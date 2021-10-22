@@ -1,13 +1,13 @@
 help:
-	@grep '####' Makefile | grep -v grep | sed -e 's/####/\t\t/'
+	@grep '####' Makefile | grep -v grep | sed -e 's/####//'
 
-cart: #### Setup Cart Component
+cart: ####\t Setup Cart Component
 	@bash components/cart.sh
 
 catalogue: #### Setup Catalogue Component
 	@bash components/catalogue.sh
 
-user: #### Setup User Component
+user: ####\t Setup User Component
 	@bash components/user.sh
 
 shipping: #### Setup Shipping Component
@@ -19,10 +19,10 @@ payment: #### Setup Payment Component
 frontend: #### Setup Frontend Component
 	@bash components/frontend.sh
 
-mysql: #### Setup MySQL Component
+mysql: ####\t Setup MySQL Component
 	@bash components/mysql.sh
 
-redis: #### Setup Redis Component
+redis: ####\t Setup Redis Component
 	@bash components/redis.sh
 
 rabbitmq: #### Setup RabbitMQ Component
