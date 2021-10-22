@@ -11,5 +11,5 @@ fi
 if [ $UID -eq 0 ]; then
   echo You are root user
 else
-  You are nonroot user
+  echo You are nonroot user
 fi
