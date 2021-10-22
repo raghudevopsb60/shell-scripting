@@ -1,13 +1,13 @@
 help:
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/://' -e 's/##//'
 
-cart: ## Setup Cart Component
+cart: 	## Setup Cart Component
 	@bash components/cart.sh
 
-catalogue: ## Setup Catalogue Component
+catalogue:	## Setup Catalogue Component
 	@bash components/catalogue.sh
 
-user: ## Setup User Component
+user:	## Setup User Component
 	@bash components/user.sh
 
 shipping: ## Setup Shipping Component
