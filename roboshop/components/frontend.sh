@@ -19,7 +19,7 @@ LOG=/tmp/roboshop.log
 rm -f $LOG
 
 Print "Installing Nginx"
-yum install nginxx -y &>>$LOG
+yum install nginx -y &>>$LOG
 Stat $?
 
 Print "Enabling Nginx"
@@ -31,6 +31,7 @@ systemctl start nginx
 Stat $?
 
 exit
+
 curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
 
 cd /usr/share/nginx/html
