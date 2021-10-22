@@ -1,5 +1,5 @@
 none:
-	@true
+	@echo -e "one - Target One\ntwo - Target Two"
 one:
 	@echo One
 two:
