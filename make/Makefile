@@ -1,5 +1,5 @@
 help:
-	@grep '####' Makefile | grep -v grep 
+	@grep '####' Makefile | grep -v grep
 one: #### Target One
 	@echo One
 two: #### Target Two
