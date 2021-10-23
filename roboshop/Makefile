@@ -9,32 +9,35 @@ help:
             printf "%-15s %s\n" $$help_command $$help_info ; \
         done
 
-cart: ## Setup Cart Component
+git-pull:
+	@git pull &>/dev/null
+
+cart: git-pull ## Setup Cart Component
 	@bash components/cart.sh
 
-catalogue: ## Setup Catalogue Component
+catalogue: git-pull ## Setup Catalogue Component
 	@bash components/catalogue.sh
 
-user: ## Setup User Component
+user: git-pull ## Setup User Component
 	@bash components/user.sh
 
-shipping: ## Setup Shipping Component
+shipping: git-pull ## Setup Shipping Component
 	@bash components/shipping.sh
 
-payment: ## Setup Payment Component
+payment: git-pull ## Setup Payment Component
 	@bash components/payment.sh
 
-frontend: ## Setup Frontend Component
+frontend: git-pull ## Setup Frontend Component
 	@bash components/frontend.sh
 
-mysql: ## Setup MySQL Component
+mysql: git-pull ## Setup MySQL Component
 	@bash components/mysql.sh
 
-redis: ## Setup Redis Component
+redis: git-pull ## Setup Redis Component
 	@bash components/redis.sh
 
-rabbitmq: ## Setup RabbitMQ Component
+rabbitmq: git-pull ## Setup RabbitMQ Component
 	@bash components/rabbitmq.sh
 
-mongodb: ## Setup MongoDB Component
+mongodb: git-pull ## Setup MongoDB Component
 	@bash components/mongodb.sh
