@@ -8,11 +8,11 @@ Stat $?
 
 
 Print "Enabling Nginx"
-systemctl enable nginx
+systemctl enable nginx &>>$LOG
 Stat $?
 
 Print "Starting Nginx"
-systemctl start nginx
+systemctl start nginx &>>$LOG
 Stat $?
 
 
