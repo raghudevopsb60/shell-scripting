@@ -4,44 +4,10 @@ source components/common.sh
 
 MSPACE=$(cat $0 | grep ^Print | awk -F '"' '{print $2}' | awk '{ print length }' | sort | tail -1)
 
-Print "Install NodeJS"
-yum install nodejs make gcc-c++ -y  &>>$LOG
-Stat $?
 
-
-Print "Add RoboShop User"
-id roboshop &>>$LOG
-if [ $? -eq 0 ]; then
-  echo User RoboShop already exists &>>$LOG
-else
-  useradd roboshop  &>>$LOG
-fi
-Stat $?
-
-Print "Download Catalogue"
-curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip" &>>$LOG
-Stat $?
-
-Print "Remove Old Content"
-rm -rf /home/roboshop/catalogue
-Stat $?
-
-Print "Extract Catalogue"
-unzip -o -d /home/roboshop /tmp/catalogue.zip &>>$LOG
-Stat $?
-
-Print "Copy Content"
-mv /home/roboshop/catalogue-main /home/roboshop/catalogue
-Stat $?
-
-Print "Install NodeJS dependencies"
-cd /home/roboshop/catalogue
-npm install --unsafe-perm &>>$LOG
-Stat $?
-
-Print "Fix App Permissions"
-chown -R roboshop:roboshop /home/roboshop
-Stat $?
+COMPONENT_NAME=Catalogue
+COMPONENT=catalogue
+NODEJS
 
 
 Print "Update DNS records in SystemD config"
