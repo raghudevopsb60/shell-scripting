@@ -2,8 +2,6 @@
 
 source components/common.sh
 
-cat $0 
-
 Print "Install NodeJS"
 yum install nodejs make gcc-c++ -y  &>>$LOG
 Stat $?
