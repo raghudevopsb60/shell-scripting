@@ -7,12 +7,4 @@ COMPONENT_NAME=User
 COMPONENT=user
 
 NODEJS
-
-Print "Checking DB Connections from APP"
-sleep 5
-STAT=$(curl -s localhost:8080/health  | jq .mongo)
-if [ "$STAT" == "true" ]; then
-  Stat 0
-else
-  Stat 1
-fi
+CHECK_MONGO_FROM_APP
