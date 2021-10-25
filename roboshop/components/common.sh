@@ -50,7 +50,7 @@ NODEJS() {
   Stat $?
 
   Print "Copy Content"
-  mv /home/roboshop/user-main /home/roboshop/${COMPONENT}
+  mv /home/roboshop/${COMPONENT}-main /home/roboshop/${COMPONENT}
   Stat $?
 
   Print "Install NodeJS dependencies"
