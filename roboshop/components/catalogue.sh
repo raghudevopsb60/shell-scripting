@@ -42,10 +42,16 @@ chown -R roboshop:roboshop /home/roboshop
 Stat $?
 
 
+Print "Update DNS records in SystemD config"
+sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/roboshop/catalogue/systemd.service   &>>$LOG
+Stat $?
 
-## mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
-## systemctl daemon-reload
-## systemctl start catalogue
-## systemctl enable catalogue
-#
-#New work item
+Print "Copy SystemD file"
+mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
+Stat $?
+
+Print "Start Catalogue Service"
+systemctl daemon-reload &>>$LOG
+systemctl restart catalogue &>>$LOG
+systemctl enable catalogue &>>$LOG
+Stat $?
