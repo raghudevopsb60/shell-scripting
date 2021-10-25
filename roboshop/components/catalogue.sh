@@ -2,7 +2,7 @@
 
 source components/common.sh
 
-cat $0 | grep ^Print | awk -F '"' '{print $2}'
+cat $0 | grep ^Print | awk -F '"' '{print $2}' | wc -c
 
 exit
 
