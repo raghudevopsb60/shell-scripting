@@ -24,10 +24,11 @@ DEFAULT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{print $
 NEW_PASSWORD="RoboShop@1"
 
 echo 'show databases;' | mysql -uroot -p"${NEW_PASSWORD}"  &>>$LOG
-if [ $? -eq 0 ]; then
-  echo "Password is already changed"
-else
-  echo "Password is not changed"
+if [ $? -ne 0 ]; then
+  Print "Changing the Default Password"
+  echo -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '${NEW_PASSWORD}';\nuninstall plugin validate_password;" >/tmp/pass.sql
+  mysql -uroot -p"${DEFAULT_PASSWORD}" </tmp/pass.sql &>>$LOG
+  Stat $?
 fi
 
 #
