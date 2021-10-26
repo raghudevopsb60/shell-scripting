@@ -28,7 +28,6 @@ DOWNLOAD "/tmp"
 
 Print "Load Schema"
 cd /tmp/mongodb-main
-mongo < catalogue.js &>>$LOG
-mongo < users.js &>>$LOG
+mongo < catalogue.js &>>$LOG && mongo < users.js &>>$LOG
 Stat $?
 
