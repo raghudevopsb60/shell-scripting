@@ -31,8 +31,8 @@ if [ $? -ne 0 ]; then
   Stat $?
 fi
 
+DOWNLOAD "/tmp"
 
-DOWNLOAD
 
 #
 ## cd /tmp
