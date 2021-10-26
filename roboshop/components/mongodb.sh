@@ -1,8 +1,10 @@
 #!/bin/bash
 
 source components/common.sh
-MSPACE=$(cat $0 | grep ^Print | awk -F '"' '{print $2}' | awk '{ print length }' | sort | tail -1)
+MSPACE=$(cat $0 | grep Print | awk -F '"' '{print $2}' | awk '{ print length }' | sort | tail -1)
 
+COMPONENT_NAME=MongoDB
+COMPONENT=mongodb
 
 Print "Download Repo"
 curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo &>>$LOG
