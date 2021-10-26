@@ -80,7 +80,8 @@ PYTHON() {
   Print "Install the dependencies"
   cd /home/roboshop/payment
   pip3 install -r requirements.txt &>>$LOG
-
+  Stat $?
+  
   SYSTEMD
 }
 
