@@ -24,13 +24,7 @@ Print "Enable MongoDB Service"
 systemctl enable mongod &>>$LOG
 Stat $?
 
-Print "Download Schema"
-curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip" &>>$LOG
-Stat $?
-
-Print "Extract Schema"
-unzip -o -d /tmp /tmp/mongodb.zip &>>$LOG
-Stat $?
+DOWNLOAD "/tmp"
 
 Print "Load Schema"
 cd /tmp/mongodb-main
