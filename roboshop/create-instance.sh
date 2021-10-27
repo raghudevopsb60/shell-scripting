@@ -1,5 +1,14 @@
 #!/bin/bash
 
+if [ "$1" == "all" ]; then
+  ALL=(frontend mongodb catalogue redis user cart mysql shipping rabbitmq payment)
+  for component in ${ALL[*]}; do
+    echo "Creating Instance - $component "
+  done
+fi
+
+exit 
+
 COUNT=$(aws ec2 describe-instances --filters  "Name=tag:Name,Values=$1" | jq ".Reservations[].Instances[].PrivateIpAddress" | grep -v null  | wc -l)
 
 if [ $COUNT -eq 0 ]; then
